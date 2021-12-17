@@ -7,3 +7,6 @@
 [submodule "phpggc"]
 	path = phpggc
 	url = https://github.com/ambionics/phpggc.git
+[submodule "log4j-shell-poc"]
+	path = log4j-shell-poc
+	url = ./log4j-shell-poc
