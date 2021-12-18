@@ -1,0 +1,5 @@
+# Nmap 7.91 scan initiated Sat Dec 18 19:50:27 2021 as: nmap -sC -sV -oA nmap/initial -vvv yoco.com/za/
+Unable to split netmask from target expression: "yoco.com/za/"
+Read data files from: /usr/bin/../share/nmap
+WARNING: No targets were specified, so 0 hosts scanned.
+# Nmap done at Sat Dec 18 19:50:28 2021 -- 0 IP addresses (0 hosts up) scanned in 0.29 seconds
