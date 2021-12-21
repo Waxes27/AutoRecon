@@ -1,5 +1,582 @@
-# Nmap 7.91 scan initiated Sat Dec 18 19:50:27 2021 as: nmap -sC -sV -oA nmap/initial -vvv yoco.com/za/
-Unable to split netmask from target expression: "yoco.com/za/"
+# Nmap 7.91 scan initiated Sun Dec 19 17:04:32 2021 as: nmap -sC -sV -oA nmap/initial -vvv tavit.co
+Nmap scan report for tavit.co (154.0.168.249)
+Host is up, received syn-ack (0.010s latency).
+rDNS record for 154.0.168.249: liotta.aserv.co.za
+Scanned at 2021-12-19 17:04:33 SAST for 299s
+Not shown: 837 filtered ports, 144 closed ports
+Reason: 837 no-responses and 144 conn-refused
+PORT     STATE SERVICE     REASON  VERSION
+21/tcp   open  ftp         syn-ack Pure-FTPd
+24/tcp   open  ssh         syn-ack OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 48:bd:e9:b1:1a:69:73:10:27:09:79:b7:f9:bd:44:55 (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCj9dLXovrY409xN/EVQtFEyyQkhhV4rSmZRT93KZUGXz+aJ6IA9ndCXEw00yuozpKoig+JY0hZdCQ+CQfwrMrZO6nRF1qBNVqs8aot8TA8Ee2I/CQG8s7PbIHFpNWpqytHNXddITOboyop/XMPpKJrxUl6JlFu+04anLkOby+j05rcCzbd6ci99Z80n6YY5fYThLlzC2GFH8z/Xwna6m7mv532/RzFzCN1ogUASX3jStfp3SH/vZzz6yFPdLljspnkmX4MauElrJbEMsN/riJPjVBZPTar0P4YiJoYX85fwVzk70WZHhQ3mvwwyQaeQLHpbaDjI5FiqbG0pbJRookD
+|   256 40:eb:11:c7:33:da:f2:f9:f0:6d:c5:e5:14:00:78:df (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBP/Mg+9PB6XPjI7wdnez4F98g8f96ALhsYORXXMBhIRhqXfyRTratFnEPXgKWwwIOOloxBYjuHu84udwN6nQPMM=
+|   256 9f:ac:6b:ff:4a:8d:25:0f:0c:a2:49:4e:3e:8e:fa:7b (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICWWvDmTwIwHm0eJsJDHkVIYiKklEJMnstJ2zRxPqioH
+25/tcp   open  smtp?       syn-ack
+| fingerprint-strings: 
+|   Hello: 
+|_    554 5.7.1 This message has been blocked because the HELO/EHLO domain is invalid.
+|_smtp-commands: Couldn't establish connection on port 25
+53/tcp   open  domain?     syn-ack
+80/tcp   open  http        syn-ack nginx
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Did not follow redirect to https://tavit.co/
+110/tcp  open  pop3        syn-ack Dovecot pop3d
+|_pop3-capabilities: USER RESP-CODES STLS SASL(PLAIN LOGIN) UIDL AUTH-RESP-CODE CAPA
+| ssl-cert: Subject: commonName=tavit.co
+| Subject Alternative Name: DNS:tavit.co, DNS:autodiscover.tavit.co, DNS:cpanel.tavit.co, DNS:cpcalendars.tavit.co, DNS:cpcontacts.tavit.co, DNS:mail.tavit.co, DNS:webdisk.tavit.co, DNS:webmail.tavit.co, DNS:www.tavit.co
+| Issuer: commonName=cPanel, Inc. Certification Authority/organizationName=cPanel, Inc./stateOrProvinceName=TX/countryName=US/localityName=Houston
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-10-05T00:00:00
+| Not valid after:  2022-01-03T23:59:59
+| MD5:   1bd3 c09d 917a c467 0d44 9231 ded4 b745
+| SHA-1: 4ef8 c04e ed0c 57f7 0f78 c2e4 3eb7 f97b c118 1a3e
+| -----BEGIN CERTIFICATE-----
+| MIIGXTCCBUWgAwIBAgIQN/fssvotq79yrdGNtz9K8DANBgkqhkiG9w0BAQsFADBy
+| MQswCQYDVQQGEwJVUzELMAkGA1UECBMCVFgxEDAOBgNVBAcTB0hvdXN0b24xFTAT
+| BgNVBAoTDGNQYW5lbCwgSW5jLjEtMCsGA1UEAxMkY1BhbmVsLCBJbmMuIENlcnRp
+| ZmljYXRpb24gQXV0aG9yaXR5MB4XDTIxMTAwNTAwMDAwMFoXDTIyMDEwMzIzNTk1
+| OVowEzERMA8GA1UEAxMIdGF2aXQuY28wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+| ggEKAoIBAQDjAcPoZxJGJTphi/jIG52IqGa32XspkeP943dB+9iZuk3hFcIdnd8a
+| NPT2xIIHJcKxJHnyJS/UAj/Gu4spSZ6lgz7S+EZe7UwD7OWlZwjCp5tXCeVtAo7N
+| PUn51eTPZJK66Q+toWo69AfGmKpjjNhrt4mPO1nXz1IxbQnd/SphwcpmeSZ3oB4G
+| uSSLvDtkVMZhEEVSxlS/VZeDtMDf11A28tpd/iJTUHOs16nBGO+JOBZJJei6Flxj
+| /SP2pKlmPZ3zC5DNR//f12WcLxrT1zofeiW/oy3vLFXmhl+r4nX5PZyAZA3z9O9l
+| JKEYMrvRTVY7slj04XGypOmWZM8Jc7zvAgMBAAGjggNMMIIDSDAfBgNVHSMEGDAW
+| gBR+A1plQWunfgrhuJ0I6h2OHWrHZTAdBgNVHQ4EFgQU7pCi+6n+C6nIWIuNH8sZ
+| Mwq8La0wDgYDVR0PAQH/BAQDAgWgMAwGA1UdEwEB/wQCMAAwHQYDVR0lBBYwFAYI
+| KwYBBQUHAwEGCCsGAQUFBwMCMEkGA1UdIARCMEAwNAYLKwYBBAGyMQECAjQwJTAj
+| BggrBgEFBQcCARYXaHR0cHM6Ly9zZWN0aWdvLmNvbS9DUFMwCAYGZ4EMAQIBMEwG
+| A1UdHwRFMEMwQaA/oD2GO2h0dHA6Ly9jcmwuY29tb2RvY2EuY29tL2NQYW5lbElu
+| Y0NlcnRpZmljYXRpb25BdXRob3JpdHkuY3JsMH0GCCsGAQUFBwEBBHEwbzBHBggr
+| BgEFBQcwAoY7aHR0cDovL2NydC5jb21vZG9jYS5jb20vY1BhbmVsSW5jQ2VydGlm
+| aWNhdGlvbkF1dGhvcml0eS5jcnQwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmNv
+| bW9kb2NhLmNvbTCCAQMGCisGAQQB1nkCBAIEgfQEgfEA7wB1AEalVet1+pEgMLWi
+| iWn0830RLEF0vv1JuIWr8vxw/m1HAAABfE5ylzQAAAQDAEYwRAIgOmjLUVHRVqzE
+| 9k8aeYC6H5mlGp7hib6SUCqnKnT/6pcCIFFTladpVT5ldHYYlNsi0Gkhf0ixPA0g
+| PeE0isi+H2ebAHYAQcjKsd8iRkoQxqE6CUKHXk4xixsD6+tLx2jwkGKWBvYAAAF8
+| TnKXPQAABAMARzBFAiA7mvCXoDHPftDAX3IqAjEUxaHZ6KfYpNPUOdaM9r5gBgIh
+| AJcXLCSduV3wZnDl4Mt+EbODbRyrEX4gC6M0sgzaF3/qMIGpBgNVHREEgaEwgZ6C
+| CHRhdml0LmNvghVhdXRvZGlzY292ZXIudGF2aXQuY2+CD2NwYW5lbC50YXZpdC5j
+| b4IUY3BjYWxlbmRhcnMudGF2aXQuY2+CE2NwY29udGFjdHMudGF2aXQuY2+CDW1h
+| aWwudGF2aXQuY2+CEHdlYmRpc2sudGF2aXQuY2+CEHdlYm1haWwudGF2aXQuY2+C
+| DHd3dy50YXZpdC5jbzANBgkqhkiG9w0BAQsFAAOCAQEAdY83Gg+ZakCnhmnYWPeO
+| f8/6qyqWPVKirgH3zM5QHlh5OkrphsUBD4PJ/o6eKR88nZdLxME1JbHruTkgzmev
+| Bx9n9R+kcwmaTSLF8rMqRaQdTti5KY2d2dG6YEIVkcrZJOPYyILyzO2lmgpJzRCA
+| lmq0Q7GTJyYRfksG3m26AsHTIvX5ve0vctcSl2+vx5a3fyXt0SSenIkMdNCPlmHi
+| YVh96FlZG7YdP1zzLqYdjp2DbhjJ4VyfgVOhjGca2KIH4/BMpATZNQw++4TcAcSY
+| 6MZnhtQy80Yl9E8DuWTiebJMVqMjVg9UvYOBQlAQgN94p1YjPrH97Xs4cMZSOi68
+| Lg==
+|_-----END CERTIFICATE-----
+|_ssl-date: TLS randomness does not represent time
+135/tcp  open  tcpwrapped  syn-ack
+143/tcp  open  imap        syn-ack Dovecot imapd
+|_imap-capabilities: STARTTLS ID have SASL-IR NAMESPACE LITERAL+ ENABLE Pre-login OK AUTH=LOGINA0001 IDLE capabilities post-login listed more AUTH=PLAIN LOGIN-REFERRALS IMAP4rev1
+| ssl-cert: Subject: commonName=tavit.co
+| Subject Alternative Name: DNS:tavit.co, DNS:autodiscover.tavit.co, DNS:cpanel.tavit.co, DNS:cpcalendars.tavit.co, DNS:cpcontacts.tavit.co, DNS:mail.tavit.co, DNS:webdisk.tavit.co, DNS:webmail.tavit.co, DNS:www.tavit.co
+| Issuer: commonName=cPanel, Inc. Certification Authority/organizationName=cPanel, Inc./stateOrProvinceName=TX/countryName=US/localityName=Houston
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-10-05T00:00:00
+| Not valid after:  2022-01-03T23:59:59
+| MD5:   1bd3 c09d 917a c467 0d44 9231 ded4 b745
+| SHA-1: 4ef8 c04e ed0c 57f7 0f78 c2e4 3eb7 f97b c118 1a3e
+| -----BEGIN CERTIFICATE-----
+| MIIGXTCCBUWgAwIBAgIQN/fssvotq79yrdGNtz9K8DANBgkqhkiG9w0BAQsFADBy
+| MQswCQYDVQQGEwJVUzELMAkGA1UECBMCVFgxEDAOBgNVBAcTB0hvdXN0b24xFTAT
+| BgNVBAoTDGNQYW5lbCwgSW5jLjEtMCsGA1UEAxMkY1BhbmVsLCBJbmMuIENlcnRp
+| ZmljYXRpb24gQXV0aG9yaXR5MB4XDTIxMTAwNTAwMDAwMFoXDTIyMDEwMzIzNTk1
+| OVowEzERMA8GA1UEAxMIdGF2aXQuY28wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+| ggEKAoIBAQDjAcPoZxJGJTphi/jIG52IqGa32XspkeP943dB+9iZuk3hFcIdnd8a
+| NPT2xIIHJcKxJHnyJS/UAj/Gu4spSZ6lgz7S+EZe7UwD7OWlZwjCp5tXCeVtAo7N
+| PUn51eTPZJK66Q+toWo69AfGmKpjjNhrt4mPO1nXz1IxbQnd/SphwcpmeSZ3oB4G
+| uSSLvDtkVMZhEEVSxlS/VZeDtMDf11A28tpd/iJTUHOs16nBGO+JOBZJJei6Flxj
+| /SP2pKlmPZ3zC5DNR//f12WcLxrT1zofeiW/oy3vLFXmhl+r4nX5PZyAZA3z9O9l
+| JKEYMrvRTVY7slj04XGypOmWZM8Jc7zvAgMBAAGjggNMMIIDSDAfBgNVHSMEGDAW
+| gBR+A1plQWunfgrhuJ0I6h2OHWrHZTAdBgNVHQ4EFgQU7pCi+6n+C6nIWIuNH8sZ
+| Mwq8La0wDgYDVR0PAQH/BAQDAgWgMAwGA1UdEwEB/wQCMAAwHQYDVR0lBBYwFAYI
+| KwYBBQUHAwEGCCsGAQUFBwMCMEkGA1UdIARCMEAwNAYLKwYBBAGyMQECAjQwJTAj
+| BggrBgEFBQcCARYXaHR0cHM6Ly9zZWN0aWdvLmNvbS9DUFMwCAYGZ4EMAQIBMEwG
+| A1UdHwRFMEMwQaA/oD2GO2h0dHA6Ly9jcmwuY29tb2RvY2EuY29tL2NQYW5lbElu
+| Y0NlcnRpZmljYXRpb25BdXRob3JpdHkuY3JsMH0GCCsGAQUFBwEBBHEwbzBHBggr
+| BgEFBQcwAoY7aHR0cDovL2NydC5jb21vZG9jYS5jb20vY1BhbmVsSW5jQ2VydGlm
+| aWNhdGlvbkF1dGhvcml0eS5jcnQwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmNv
+| bW9kb2NhLmNvbTCCAQMGCisGAQQB1nkCBAIEgfQEgfEA7wB1AEalVet1+pEgMLWi
+| iWn0830RLEF0vv1JuIWr8vxw/m1HAAABfE5ylzQAAAQDAEYwRAIgOmjLUVHRVqzE
+| 9k8aeYC6H5mlGp7hib6SUCqnKnT/6pcCIFFTladpVT5ldHYYlNsi0Gkhf0ixPA0g
+| PeE0isi+H2ebAHYAQcjKsd8iRkoQxqE6CUKHXk4xixsD6+tLx2jwkGKWBvYAAAF8
+| TnKXPQAABAMARzBFAiA7mvCXoDHPftDAX3IqAjEUxaHZ6KfYpNPUOdaM9r5gBgIh
+| AJcXLCSduV3wZnDl4Mt+EbODbRyrEX4gC6M0sgzaF3/qMIGpBgNVHREEgaEwgZ6C
+| CHRhdml0LmNvghVhdXRvZGlzY292ZXIudGF2aXQuY2+CD2NwYW5lbC50YXZpdC5j
+| b4IUY3BjYWxlbmRhcnMudGF2aXQuY2+CE2NwY29udGFjdHMudGF2aXQuY2+CDW1h
+| aWwudGF2aXQuY2+CEHdlYmRpc2sudGF2aXQuY2+CEHdlYm1haWwudGF2aXQuY2+C
+| DHd3dy50YXZpdC5jbzANBgkqhkiG9w0BAQsFAAOCAQEAdY83Gg+ZakCnhmnYWPeO
+| f8/6qyqWPVKirgH3zM5QHlh5OkrphsUBD4PJ/o6eKR88nZdLxME1JbHruTkgzmev
+| Bx9n9R+kcwmaTSLF8rMqRaQdTti5KY2d2dG6YEIVkcrZJOPYyILyzO2lmgpJzRCA
+| lmq0Q7GTJyYRfksG3m26AsHTIvX5ve0vctcSl2+vx5a3fyXt0SSenIkMdNCPlmHi
+| YVh96FlZG7YdP1zzLqYdjp2DbhjJ4VyfgVOhjGca2KIH4/BMpATZNQw++4TcAcSY
+| 6MZnhtQy80Yl9E8DuWTiebJMVqMjVg9UvYOBQlAQgN94p1YjPrH97Xs4cMZSOi68
+| Lg==
+|_-----END CERTIFICATE-----
+|_ssl-date: TLS randomness does not represent time
+443/tcp  open  ssl/http    syn-ack nginx
+|_http-favicon: Unknown favicon MD5: 64F26E0E1AD49A9013D9A6ADB90DBACF
+|_http-generator: WordPress 5.8.2
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Home - The Audio Visual and Information Technology Company
+| ssl-cert: Subject: commonName=tavit.co
+| Subject Alternative Name: DNS:tavit.co, DNS:autodiscover.tavit.co, DNS:cpanel.tavit.co, DNS:cpcalendars.tavit.co, DNS:cpcontacts.tavit.co, DNS:mail.tavit.co, DNS:webdisk.tavit.co, DNS:webmail.tavit.co, DNS:www.tavit.co
+| Issuer: commonName=cPanel, Inc. Certification Authority/organizationName=cPanel, Inc./stateOrProvinceName=TX/countryName=US/localityName=Houston
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-10-05T00:00:00
+| Not valid after:  2022-01-03T23:59:59
+| MD5:   1bd3 c09d 917a c467 0d44 9231 ded4 b745
+| SHA-1: 4ef8 c04e ed0c 57f7 0f78 c2e4 3eb7 f97b c118 1a3e
+| -----BEGIN CERTIFICATE-----
+| MIIGXTCCBUWgAwIBAgIQN/fssvotq79yrdGNtz9K8DANBgkqhkiG9w0BAQsFADBy
+| MQswCQYDVQQGEwJVUzELMAkGA1UECBMCVFgxEDAOBgNVBAcTB0hvdXN0b24xFTAT
+| BgNVBAoTDGNQYW5lbCwgSW5jLjEtMCsGA1UEAxMkY1BhbmVsLCBJbmMuIENlcnRp
+| ZmljYXRpb24gQXV0aG9yaXR5MB4XDTIxMTAwNTAwMDAwMFoXDTIyMDEwMzIzNTk1
+| OVowEzERMA8GA1UEAxMIdGF2aXQuY28wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+| ggEKAoIBAQDjAcPoZxJGJTphi/jIG52IqGa32XspkeP943dB+9iZuk3hFcIdnd8a
+| NPT2xIIHJcKxJHnyJS/UAj/Gu4spSZ6lgz7S+EZe7UwD7OWlZwjCp5tXCeVtAo7N
+| PUn51eTPZJK66Q+toWo69AfGmKpjjNhrt4mPO1nXz1IxbQnd/SphwcpmeSZ3oB4G
+| uSSLvDtkVMZhEEVSxlS/VZeDtMDf11A28tpd/iJTUHOs16nBGO+JOBZJJei6Flxj
+| /SP2pKlmPZ3zC5DNR//f12WcLxrT1zofeiW/oy3vLFXmhl+r4nX5PZyAZA3z9O9l
+| JKEYMrvRTVY7slj04XGypOmWZM8Jc7zvAgMBAAGjggNMMIIDSDAfBgNVHSMEGDAW
+| gBR+A1plQWunfgrhuJ0I6h2OHWrHZTAdBgNVHQ4EFgQU7pCi+6n+C6nIWIuNH8sZ
+| Mwq8La0wDgYDVR0PAQH/BAQDAgWgMAwGA1UdEwEB/wQCMAAwHQYDVR0lBBYwFAYI
+| KwYBBQUHAwEGCCsGAQUFBwMCMEkGA1UdIARCMEAwNAYLKwYBBAGyMQECAjQwJTAj
+| BggrBgEFBQcCARYXaHR0cHM6Ly9zZWN0aWdvLmNvbS9DUFMwCAYGZ4EMAQIBMEwG
+| A1UdHwRFMEMwQaA/oD2GO2h0dHA6Ly9jcmwuY29tb2RvY2EuY29tL2NQYW5lbElu
+| Y0NlcnRpZmljYXRpb25BdXRob3JpdHkuY3JsMH0GCCsGAQUFBwEBBHEwbzBHBggr
+| BgEFBQcwAoY7aHR0cDovL2NydC5jb21vZG9jYS5jb20vY1BhbmVsSW5jQ2VydGlm
+| aWNhdGlvbkF1dGhvcml0eS5jcnQwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmNv
+| bW9kb2NhLmNvbTCCAQMGCisGAQQB1nkCBAIEgfQEgfEA7wB1AEalVet1+pEgMLWi
+| iWn0830RLEF0vv1JuIWr8vxw/m1HAAABfE5ylzQAAAQDAEYwRAIgOmjLUVHRVqzE
+| 9k8aeYC6H5mlGp7hib6SUCqnKnT/6pcCIFFTladpVT5ldHYYlNsi0Gkhf0ixPA0g
+| PeE0isi+H2ebAHYAQcjKsd8iRkoQxqE6CUKHXk4xixsD6+tLx2jwkGKWBvYAAAF8
+| TnKXPQAABAMARzBFAiA7mvCXoDHPftDAX3IqAjEUxaHZ6KfYpNPUOdaM9r5gBgIh
+| AJcXLCSduV3wZnDl4Mt+EbODbRyrEX4gC6M0sgzaF3/qMIGpBgNVHREEgaEwgZ6C
+| CHRhdml0LmNvghVhdXRvZGlzY292ZXIudGF2aXQuY2+CD2NwYW5lbC50YXZpdC5j
+| b4IUY3BjYWxlbmRhcnMudGF2aXQuY2+CE2NwY29udGFjdHMudGF2aXQuY2+CDW1h
+| aWwudGF2aXQuY2+CEHdlYmRpc2sudGF2aXQuY2+CEHdlYm1haWwudGF2aXQuY2+C
+| DHd3dy50YXZpdC5jbzANBgkqhkiG9w0BAQsFAAOCAQEAdY83Gg+ZakCnhmnYWPeO
+| f8/6qyqWPVKirgH3zM5QHlh5OkrphsUBD4PJ/o6eKR88nZdLxME1JbHruTkgzmev
+| Bx9n9R+kcwmaTSLF8rMqRaQdTti5KY2d2dG6YEIVkcrZJOPYyILyzO2lmgpJzRCA
+| lmq0Q7GTJyYRfksG3m26AsHTIvX5ve0vctcSl2+vx5a3fyXt0SSenIkMdNCPlmHi
+| YVh96FlZG7YdP1zzLqYdjp2DbhjJ4VyfgVOhjGca2KIH4/BMpATZNQw++4TcAcSY
+| 6MZnhtQy80Yl9E8DuWTiebJMVqMjVg9UvYOBQlAQgN94p1YjPrH97Xs4cMZSOi68
+| Lg==
+|_-----END CERTIFICATE-----
+|_ssl-date: TLS randomness does not represent time
+| tls-alpn: 
+|   h2
+|   http/1.1
+|   http/1.0
+|_  http/0.9
+445/tcp  open  tcpwrapped  syn-ack
+465/tcp  open  ssl/smtp    syn-ack Exim smtpd 4.94.2
+| smtp-commands: liotta.aserv.co.za Hello tavit.co [197.245.199.114], SIZE 52428800, 8BITMIME, DSN, PIPELINING, PIPE_CONNECT, AUTH PLAIN LOGIN, HELP, 
+|_ Commands supported: AUTH HELO EHLO MAIL RCPT DATA BDAT NOOP QUIT RSET HELP 
+| ssl-cert: Subject: commonName=tavit.co
+| Subject Alternative Name: DNS:tavit.co, DNS:autodiscover.tavit.co, DNS:cpanel.tavit.co, DNS:cpcalendars.tavit.co, DNS:cpcontacts.tavit.co, DNS:mail.tavit.co, DNS:webdisk.tavit.co, DNS:webmail.tavit.co, DNS:www.tavit.co
+| Issuer: commonName=cPanel, Inc. Certification Authority/organizationName=cPanel, Inc./stateOrProvinceName=TX/countryName=US/localityName=Houston
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-10-05T00:00:00
+| Not valid after:  2022-01-03T23:59:59
+| MD5:   1bd3 c09d 917a c467 0d44 9231 ded4 b745
+| SHA-1: 4ef8 c04e ed0c 57f7 0f78 c2e4 3eb7 f97b c118 1a3e
+| -----BEGIN CERTIFICATE-----
+| MIIGXTCCBUWgAwIBAgIQN/fssvotq79yrdGNtz9K8DANBgkqhkiG9w0BAQsFADBy
+| MQswCQYDVQQGEwJVUzELMAkGA1UECBMCVFgxEDAOBgNVBAcTB0hvdXN0b24xFTAT
+| BgNVBAoTDGNQYW5lbCwgSW5jLjEtMCsGA1UEAxMkY1BhbmVsLCBJbmMuIENlcnRp
+| ZmljYXRpb24gQXV0aG9yaXR5MB4XDTIxMTAwNTAwMDAwMFoXDTIyMDEwMzIzNTk1
+| OVowEzERMA8GA1UEAxMIdGF2aXQuY28wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+| ggEKAoIBAQDjAcPoZxJGJTphi/jIG52IqGa32XspkeP943dB+9iZuk3hFcIdnd8a
+| NPT2xIIHJcKxJHnyJS/UAj/Gu4spSZ6lgz7S+EZe7UwD7OWlZwjCp5tXCeVtAo7N
+| PUn51eTPZJK66Q+toWo69AfGmKpjjNhrt4mPO1nXz1IxbQnd/SphwcpmeSZ3oB4G
+| uSSLvDtkVMZhEEVSxlS/VZeDtMDf11A28tpd/iJTUHOs16nBGO+JOBZJJei6Flxj
+| /SP2pKlmPZ3zC5DNR//f12WcLxrT1zofeiW/oy3vLFXmhl+r4nX5PZyAZA3z9O9l
+| JKEYMrvRTVY7slj04XGypOmWZM8Jc7zvAgMBAAGjggNMMIIDSDAfBgNVHSMEGDAW
+| gBR+A1plQWunfgrhuJ0I6h2OHWrHZTAdBgNVHQ4EFgQU7pCi+6n+C6nIWIuNH8sZ
+| Mwq8La0wDgYDVR0PAQH/BAQDAgWgMAwGA1UdEwEB/wQCMAAwHQYDVR0lBBYwFAYI
+| KwYBBQUHAwEGCCsGAQUFBwMCMEkGA1UdIARCMEAwNAYLKwYBBAGyMQECAjQwJTAj
+| BggrBgEFBQcCARYXaHR0cHM6Ly9zZWN0aWdvLmNvbS9DUFMwCAYGZ4EMAQIBMEwG
+| A1UdHwRFMEMwQaA/oD2GO2h0dHA6Ly9jcmwuY29tb2RvY2EuY29tL2NQYW5lbElu
+| Y0NlcnRpZmljYXRpb25BdXRob3JpdHkuY3JsMH0GCCsGAQUFBwEBBHEwbzBHBggr
+| BgEFBQcwAoY7aHR0cDovL2NydC5jb21vZG9jYS5jb20vY1BhbmVsSW5jQ2VydGlm
+| aWNhdGlvbkF1dGhvcml0eS5jcnQwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmNv
+| bW9kb2NhLmNvbTCCAQMGCisGAQQB1nkCBAIEgfQEgfEA7wB1AEalVet1+pEgMLWi
+| iWn0830RLEF0vv1JuIWr8vxw/m1HAAABfE5ylzQAAAQDAEYwRAIgOmjLUVHRVqzE
+| 9k8aeYC6H5mlGp7hib6SUCqnKnT/6pcCIFFTladpVT5ldHYYlNsi0Gkhf0ixPA0g
+| PeE0isi+H2ebAHYAQcjKsd8iRkoQxqE6CUKHXk4xixsD6+tLx2jwkGKWBvYAAAF8
+| TnKXPQAABAMARzBFAiA7mvCXoDHPftDAX3IqAjEUxaHZ6KfYpNPUOdaM9r5gBgIh
+| AJcXLCSduV3wZnDl4Mt+EbODbRyrEX4gC6M0sgzaF3/qMIGpBgNVHREEgaEwgZ6C
+| CHRhdml0LmNvghVhdXRvZGlzY292ZXIudGF2aXQuY2+CD2NwYW5lbC50YXZpdC5j
+| b4IUY3BjYWxlbmRhcnMudGF2aXQuY2+CE2NwY29udGFjdHMudGF2aXQuY2+CDW1h
+| aWwudGF2aXQuY2+CEHdlYmRpc2sudGF2aXQuY2+CEHdlYm1haWwudGF2aXQuY2+C
+| DHd3dy50YXZpdC5jbzANBgkqhkiG9w0BAQsFAAOCAQEAdY83Gg+ZakCnhmnYWPeO
+| f8/6qyqWPVKirgH3zM5QHlh5OkrphsUBD4PJ/o6eKR88nZdLxME1JbHruTkgzmev
+| Bx9n9R+kcwmaTSLF8rMqRaQdTti5KY2d2dG6YEIVkcrZJOPYyILyzO2lmgpJzRCA
+| lmq0Q7GTJyYRfksG3m26AsHTIvX5ve0vctcSl2+vx5a3fyXt0SSenIkMdNCPlmHi
+| YVh96FlZG7YdP1zzLqYdjp2DbhjJ4VyfgVOhjGca2KIH4/BMpATZNQw++4TcAcSY
+| 6MZnhtQy80Yl9E8DuWTiebJMVqMjVg9UvYOBQlAQgN94p1YjPrH97Xs4cMZSOi68
+| Lg==
+|_-----END CERTIFICATE-----
+|_ssl-date: TLS randomness does not represent time
+587/tcp  open  smtp        syn-ack Exim smtpd 4.94.2
+| smtp-commands: liotta.aserv.co.za Hello tavit.co [197.245.199.114], SIZE 52428800, 8BITMIME, DSN, PIPELINING, PIPE_CONNECT, AUTH PLAIN LOGIN, STARTTLS, HELP, 
+|_ Commands supported: AUTH STARTTLS HELO EHLO MAIL RCPT DATA BDAT NOOP QUIT RSET HELP 
+| ssl-cert: Subject: commonName=tavit.co
+| Subject Alternative Name: DNS:tavit.co, DNS:autodiscover.tavit.co, DNS:cpanel.tavit.co, DNS:cpcalendars.tavit.co, DNS:cpcontacts.tavit.co, DNS:mail.tavit.co, DNS:webdisk.tavit.co, DNS:webmail.tavit.co, DNS:www.tavit.co
+| Issuer: commonName=cPanel, Inc. Certification Authority/organizationName=cPanel, Inc./stateOrProvinceName=TX/countryName=US/localityName=Houston
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-10-05T00:00:00
+| Not valid after:  2022-01-03T23:59:59
+| MD5:   1bd3 c09d 917a c467 0d44 9231 ded4 b745
+| SHA-1: 4ef8 c04e ed0c 57f7 0f78 c2e4 3eb7 f97b c118 1a3e
+| -----BEGIN CERTIFICATE-----
+| MIIGXTCCBUWgAwIBAgIQN/fssvotq79yrdGNtz9K8DANBgkqhkiG9w0BAQsFADBy
+| MQswCQYDVQQGEwJVUzELMAkGA1UECBMCVFgxEDAOBgNVBAcTB0hvdXN0b24xFTAT
+| BgNVBAoTDGNQYW5lbCwgSW5jLjEtMCsGA1UEAxMkY1BhbmVsLCBJbmMuIENlcnRp
+| ZmljYXRpb24gQXV0aG9yaXR5MB4XDTIxMTAwNTAwMDAwMFoXDTIyMDEwMzIzNTk1
+| OVowEzERMA8GA1UEAxMIdGF2aXQuY28wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+| ggEKAoIBAQDjAcPoZxJGJTphi/jIG52IqGa32XspkeP943dB+9iZuk3hFcIdnd8a
+| NPT2xIIHJcKxJHnyJS/UAj/Gu4spSZ6lgz7S+EZe7UwD7OWlZwjCp5tXCeVtAo7N
+| PUn51eTPZJK66Q+toWo69AfGmKpjjNhrt4mPO1nXz1IxbQnd/SphwcpmeSZ3oB4G
+| uSSLvDtkVMZhEEVSxlS/VZeDtMDf11A28tpd/iJTUHOs16nBGO+JOBZJJei6Flxj
+| /SP2pKlmPZ3zC5DNR//f12WcLxrT1zofeiW/oy3vLFXmhl+r4nX5PZyAZA3z9O9l
+| JKEYMrvRTVY7slj04XGypOmWZM8Jc7zvAgMBAAGjggNMMIIDSDAfBgNVHSMEGDAW
+| gBR+A1plQWunfgrhuJ0I6h2OHWrHZTAdBgNVHQ4EFgQU7pCi+6n+C6nIWIuNH8sZ
+| Mwq8La0wDgYDVR0PAQH/BAQDAgWgMAwGA1UdEwEB/wQCMAAwHQYDVR0lBBYwFAYI
+| KwYBBQUHAwEGCCsGAQUFBwMCMEkGA1UdIARCMEAwNAYLKwYBBAGyMQECAjQwJTAj
+| BggrBgEFBQcCARYXaHR0cHM6Ly9zZWN0aWdvLmNvbS9DUFMwCAYGZ4EMAQIBMEwG
+| A1UdHwRFMEMwQaA/oD2GO2h0dHA6Ly9jcmwuY29tb2RvY2EuY29tL2NQYW5lbElu
+| Y0NlcnRpZmljYXRpb25BdXRob3JpdHkuY3JsMH0GCCsGAQUFBwEBBHEwbzBHBggr
+| BgEFBQcwAoY7aHR0cDovL2NydC5jb21vZG9jYS5jb20vY1BhbmVsSW5jQ2VydGlm
+| aWNhdGlvbkF1dGhvcml0eS5jcnQwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmNv
+| bW9kb2NhLmNvbTCCAQMGCisGAQQB1nkCBAIEgfQEgfEA7wB1AEalVet1+pEgMLWi
+| iWn0830RLEF0vv1JuIWr8vxw/m1HAAABfE5ylzQAAAQDAEYwRAIgOmjLUVHRVqzE
+| 9k8aeYC6H5mlGp7hib6SUCqnKnT/6pcCIFFTladpVT5ldHYYlNsi0Gkhf0ixPA0g
+| PeE0isi+H2ebAHYAQcjKsd8iRkoQxqE6CUKHXk4xixsD6+tLx2jwkGKWBvYAAAF8
+| TnKXPQAABAMARzBFAiA7mvCXoDHPftDAX3IqAjEUxaHZ6KfYpNPUOdaM9r5gBgIh
+| AJcXLCSduV3wZnDl4Mt+EbODbRyrEX4gC6M0sgzaF3/qMIGpBgNVHREEgaEwgZ6C
+| CHRhdml0LmNvghVhdXRvZGlzY292ZXIudGF2aXQuY2+CD2NwYW5lbC50YXZpdC5j
+| b4IUY3BjYWxlbmRhcnMudGF2aXQuY2+CE2NwY29udGFjdHMudGF2aXQuY2+CDW1h
+| aWwudGF2aXQuY2+CEHdlYmRpc2sudGF2aXQuY2+CEHdlYm1haWwudGF2aXQuY2+C
+| DHd3dy50YXZpdC5jbzANBgkqhkiG9w0BAQsFAAOCAQEAdY83Gg+ZakCnhmnYWPeO
+| f8/6qyqWPVKirgH3zM5QHlh5OkrphsUBD4PJ/o6eKR88nZdLxME1JbHruTkgzmev
+| Bx9n9R+kcwmaTSLF8rMqRaQdTti5KY2d2dG6YEIVkcrZJOPYyILyzO2lmgpJzRCA
+| lmq0Q7GTJyYRfksG3m26AsHTIvX5ve0vctcSl2+vx5a3fyXt0SSenIkMdNCPlmHi
+| YVh96FlZG7YdP1zzLqYdjp2DbhjJ4VyfgVOhjGca2KIH4/BMpATZNQw++4TcAcSY
+| 6MZnhtQy80Yl9E8DuWTiebJMVqMjVg9UvYOBQlAQgN94p1YjPrH97Xs4cMZSOi68
+| Lg==
+|_-----END CERTIFICATE-----
+|_ssl-date: TLS randomness does not represent time
+993/tcp  open  ssl/imap    syn-ack Dovecot imapd
+|_imap-capabilities: ID have SASL-IR NAMESPACE LITERAL+ ENABLE Pre-login OK AUTH=LOGINA0001 IDLE capabilities post-login listed more AUTH=PLAIN LOGIN-REFERRALS IMAP4rev1
+| ssl-cert: Subject: commonName=tavit.co
+| Subject Alternative Name: DNS:tavit.co, DNS:autodiscover.tavit.co, DNS:cpanel.tavit.co, DNS:cpcalendars.tavit.co, DNS:cpcontacts.tavit.co, DNS:mail.tavit.co, DNS:webdisk.tavit.co, DNS:webmail.tavit.co, DNS:www.tavit.co
+| Issuer: commonName=cPanel, Inc. Certification Authority/organizationName=cPanel, Inc./stateOrProvinceName=TX/countryName=US/localityName=Houston
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-10-05T00:00:00
+| Not valid after:  2022-01-03T23:59:59
+| MD5:   1bd3 c09d 917a c467 0d44 9231 ded4 b745
+| SHA-1: 4ef8 c04e ed0c 57f7 0f78 c2e4 3eb7 f97b c118 1a3e
+| -----BEGIN CERTIFICATE-----
+| MIIGXTCCBUWgAwIBAgIQN/fssvotq79yrdGNtz9K8DANBgkqhkiG9w0BAQsFADBy
+| MQswCQYDVQQGEwJVUzELMAkGA1UECBMCVFgxEDAOBgNVBAcTB0hvdXN0b24xFTAT
+| BgNVBAoTDGNQYW5lbCwgSW5jLjEtMCsGA1UEAxMkY1BhbmVsLCBJbmMuIENlcnRp
+| ZmljYXRpb24gQXV0aG9yaXR5MB4XDTIxMTAwNTAwMDAwMFoXDTIyMDEwMzIzNTk1
+| OVowEzERMA8GA1UEAxMIdGF2aXQuY28wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+| ggEKAoIBAQDjAcPoZxJGJTphi/jIG52IqGa32XspkeP943dB+9iZuk3hFcIdnd8a
+| NPT2xIIHJcKxJHnyJS/UAj/Gu4spSZ6lgz7S+EZe7UwD7OWlZwjCp5tXCeVtAo7N
+| PUn51eTPZJK66Q+toWo69AfGmKpjjNhrt4mPO1nXz1IxbQnd/SphwcpmeSZ3oB4G
+| uSSLvDtkVMZhEEVSxlS/VZeDtMDf11A28tpd/iJTUHOs16nBGO+JOBZJJei6Flxj
+| /SP2pKlmPZ3zC5DNR//f12WcLxrT1zofeiW/oy3vLFXmhl+r4nX5PZyAZA3z9O9l
+| JKEYMrvRTVY7slj04XGypOmWZM8Jc7zvAgMBAAGjggNMMIIDSDAfBgNVHSMEGDAW
+| gBR+A1plQWunfgrhuJ0I6h2OHWrHZTAdBgNVHQ4EFgQU7pCi+6n+C6nIWIuNH8sZ
+| Mwq8La0wDgYDVR0PAQH/BAQDAgWgMAwGA1UdEwEB/wQCMAAwHQYDVR0lBBYwFAYI
+| KwYBBQUHAwEGCCsGAQUFBwMCMEkGA1UdIARCMEAwNAYLKwYBBAGyMQECAjQwJTAj
+| BggrBgEFBQcCARYXaHR0cHM6Ly9zZWN0aWdvLmNvbS9DUFMwCAYGZ4EMAQIBMEwG
+| A1UdHwRFMEMwQaA/oD2GO2h0dHA6Ly9jcmwuY29tb2RvY2EuY29tL2NQYW5lbElu
+| Y0NlcnRpZmljYXRpb25BdXRob3JpdHkuY3JsMH0GCCsGAQUFBwEBBHEwbzBHBggr
+| BgEFBQcwAoY7aHR0cDovL2NydC5jb21vZG9jYS5jb20vY1BhbmVsSW5jQ2VydGlm
+| aWNhdGlvbkF1dGhvcml0eS5jcnQwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmNv
+| bW9kb2NhLmNvbTCCAQMGCisGAQQB1nkCBAIEgfQEgfEA7wB1AEalVet1+pEgMLWi
+| iWn0830RLEF0vv1JuIWr8vxw/m1HAAABfE5ylzQAAAQDAEYwRAIgOmjLUVHRVqzE
+| 9k8aeYC6H5mlGp7hib6SUCqnKnT/6pcCIFFTladpVT5ldHYYlNsi0Gkhf0ixPA0g
+| PeE0isi+H2ebAHYAQcjKsd8iRkoQxqE6CUKHXk4xixsD6+tLx2jwkGKWBvYAAAF8
+| TnKXPQAABAMARzBFAiA7mvCXoDHPftDAX3IqAjEUxaHZ6KfYpNPUOdaM9r5gBgIh
+| AJcXLCSduV3wZnDl4Mt+EbODbRyrEX4gC6M0sgzaF3/qMIGpBgNVHREEgaEwgZ6C
+| CHRhdml0LmNvghVhdXRvZGlzY292ZXIudGF2aXQuY2+CD2NwYW5lbC50YXZpdC5j
+| b4IUY3BjYWxlbmRhcnMudGF2aXQuY2+CE2NwY29udGFjdHMudGF2aXQuY2+CDW1h
+| aWwudGF2aXQuY2+CEHdlYmRpc2sudGF2aXQuY2+CEHdlYm1haWwudGF2aXQuY2+C
+| DHd3dy50YXZpdC5jbzANBgkqhkiG9w0BAQsFAAOCAQEAdY83Gg+ZakCnhmnYWPeO
+| f8/6qyqWPVKirgH3zM5QHlh5OkrphsUBD4PJ/o6eKR88nZdLxME1JbHruTkgzmev
+| Bx9n9R+kcwmaTSLF8rMqRaQdTti5KY2d2dG6YEIVkcrZJOPYyILyzO2lmgpJzRCA
+| lmq0Q7GTJyYRfksG3m26AsHTIvX5ve0vctcSl2+vx5a3fyXt0SSenIkMdNCPlmHi
+| YVh96FlZG7YdP1zzLqYdjp2DbhjJ4VyfgVOhjGca2KIH4/BMpATZNQw++4TcAcSY
+| 6MZnhtQy80Yl9E8DuWTiebJMVqMjVg9UvYOBQlAQgN94p1YjPrH97Xs4cMZSOi68
+| Lg==
+|_-----END CERTIFICATE-----
+|_ssl-date: TLS randomness does not represent time
+995/tcp  open  ssl/pop3    syn-ack Dovecot pop3d
+|_pop3-capabilities: TOP PIPELINING RESP-CODES SASL(PLAIN LOGIN) USER UIDL AUTH-RESP-CODE CAPA
+| ssl-cert: Subject: commonName=tavit.co
+| Subject Alternative Name: DNS:tavit.co, DNS:autodiscover.tavit.co, DNS:cpanel.tavit.co, DNS:cpcalendars.tavit.co, DNS:cpcontacts.tavit.co, DNS:mail.tavit.co, DNS:webdisk.tavit.co, DNS:webmail.tavit.co, DNS:www.tavit.co
+| Issuer: commonName=cPanel, Inc. Certification Authority/organizationName=cPanel, Inc./stateOrProvinceName=TX/countryName=US/localityName=Houston
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-10-05T00:00:00
+| Not valid after:  2022-01-03T23:59:59
+| MD5:   1bd3 c09d 917a c467 0d44 9231 ded4 b745
+| SHA-1: 4ef8 c04e ed0c 57f7 0f78 c2e4 3eb7 f97b c118 1a3e
+| -----BEGIN CERTIFICATE-----
+| MIIGXTCCBUWgAwIBAgIQN/fssvotq79yrdGNtz9K8DANBgkqhkiG9w0BAQsFADBy
+| MQswCQYDVQQGEwJVUzELMAkGA1UECBMCVFgxEDAOBgNVBAcTB0hvdXN0b24xFTAT
+| BgNVBAoTDGNQYW5lbCwgSW5jLjEtMCsGA1UEAxMkY1BhbmVsLCBJbmMuIENlcnRp
+| ZmljYXRpb24gQXV0aG9yaXR5MB4XDTIxMTAwNTAwMDAwMFoXDTIyMDEwMzIzNTk1
+| OVowEzERMA8GA1UEAxMIdGF2aXQuY28wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+| ggEKAoIBAQDjAcPoZxJGJTphi/jIG52IqGa32XspkeP943dB+9iZuk3hFcIdnd8a
+| NPT2xIIHJcKxJHnyJS/UAj/Gu4spSZ6lgz7S+EZe7UwD7OWlZwjCp5tXCeVtAo7N
+| PUn51eTPZJK66Q+toWo69AfGmKpjjNhrt4mPO1nXz1IxbQnd/SphwcpmeSZ3oB4G
+| uSSLvDtkVMZhEEVSxlS/VZeDtMDf11A28tpd/iJTUHOs16nBGO+JOBZJJei6Flxj
+| /SP2pKlmPZ3zC5DNR//f12WcLxrT1zofeiW/oy3vLFXmhl+r4nX5PZyAZA3z9O9l
+| JKEYMrvRTVY7slj04XGypOmWZM8Jc7zvAgMBAAGjggNMMIIDSDAfBgNVHSMEGDAW
+| gBR+A1plQWunfgrhuJ0I6h2OHWrHZTAdBgNVHQ4EFgQU7pCi+6n+C6nIWIuNH8sZ
+| Mwq8La0wDgYDVR0PAQH/BAQDAgWgMAwGA1UdEwEB/wQCMAAwHQYDVR0lBBYwFAYI
+| KwYBBQUHAwEGCCsGAQUFBwMCMEkGA1UdIARCMEAwNAYLKwYBBAGyMQECAjQwJTAj
+| BggrBgEFBQcCARYXaHR0cHM6Ly9zZWN0aWdvLmNvbS9DUFMwCAYGZ4EMAQIBMEwG
+| A1UdHwRFMEMwQaA/oD2GO2h0dHA6Ly9jcmwuY29tb2RvY2EuY29tL2NQYW5lbElu
+| Y0NlcnRpZmljYXRpb25BdXRob3JpdHkuY3JsMH0GCCsGAQUFBwEBBHEwbzBHBggr
+| BgEFBQcwAoY7aHR0cDovL2NydC5jb21vZG9jYS5jb20vY1BhbmVsSW5jQ2VydGlm
+| aWNhdGlvbkF1dGhvcml0eS5jcnQwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmNv
+| bW9kb2NhLmNvbTCCAQMGCisGAQQB1nkCBAIEgfQEgfEA7wB1AEalVet1+pEgMLWi
+| iWn0830RLEF0vv1JuIWr8vxw/m1HAAABfE5ylzQAAAQDAEYwRAIgOmjLUVHRVqzE
+| 9k8aeYC6H5mlGp7hib6SUCqnKnT/6pcCIFFTladpVT5ldHYYlNsi0Gkhf0ixPA0g
+| PeE0isi+H2ebAHYAQcjKsd8iRkoQxqE6CUKHXk4xixsD6+tLx2jwkGKWBvYAAAF8
+| TnKXPQAABAMARzBFAiA7mvCXoDHPftDAX3IqAjEUxaHZ6KfYpNPUOdaM9r5gBgIh
+| AJcXLCSduV3wZnDl4Mt+EbODbRyrEX4gC6M0sgzaF3/qMIGpBgNVHREEgaEwgZ6C
+| CHRhdml0LmNvghVhdXRvZGlzY292ZXIudGF2aXQuY2+CD2NwYW5lbC50YXZpdC5j
+| b4IUY3BjYWxlbmRhcnMudGF2aXQuY2+CE2NwY29udGFjdHMudGF2aXQuY2+CDW1h
+| aWwudGF2aXQuY2+CEHdlYmRpc2sudGF2aXQuY2+CEHdlYm1haWwudGF2aXQuY2+C
+| DHd3dy50YXZpdC5jbzANBgkqhkiG9w0BAQsFAAOCAQEAdY83Gg+ZakCnhmnYWPeO
+| f8/6qyqWPVKirgH3zM5QHlh5OkrphsUBD4PJ/o6eKR88nZdLxME1JbHruTkgzmev
+| Bx9n9R+kcwmaTSLF8rMqRaQdTti5KY2d2dG6YEIVkcrZJOPYyILyzO2lmgpJzRCA
+| lmq0Q7GTJyYRfksG3m26AsHTIvX5ve0vctcSl2+vx5a3fyXt0SSenIkMdNCPlmHi
+| YVh96FlZG7YdP1zzLqYdjp2DbhjJ4VyfgVOhjGca2KIH4/BMpATZNQw++4TcAcSY
+| 6MZnhtQy80Yl9E8DuWTiebJMVqMjVg9UvYOBQlAQgN94p1YjPrH97Xs4cMZSOi68
+| Lg==
+|_-----END CERTIFICATE-----
+|_ssl-date: TLS randomness does not represent time
+2000/tcp open  cisco-sccp? syn-ack
+3306/tcp open  mysql       syn-ack MySQL 5.5.5-10.2.41-MariaDB
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.5.5-10.2.41-MariaDB
+|   Thread ID: 476108
+|   Capabilities flags: 63486
+|   Some Capabilities: SupportsLoadDataLocal, SupportsCompression, IgnoreSigpipes, DontAllowDatabaseTableColumn, Support41Auth, FoundRows, SupportsTransactions, ConnectWithDatabase, Speaks41ProtocolOld, LongColumnFlag, InteractiveClient, IgnoreSpaceBeforeParenthesis, Speaks41ProtocolNew, ODBCClient, SupportsMultipleStatments, SupportsMultipleResults, SupportsAuthPlugins
+|   Status: Autocommit
+|   Salt: VoJd:3/2Mn`vS{503Ld3
+|_  Auth Plugin Name: mysql_native_password
+5060/tcp open  sip?        syn-ack
+8008/tcp open  http        syn-ack
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 302 Found
+|     Location: https://:8010/nice%20ports%2C/Tri%6Eity.txt%2ebak
+|     Connection: close
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|     Content-Security-Policy: frame-ancestors 'self'
+|   GenericLines, HTTPOptions, RTSPRequest, SIPOptions: 
+|     HTTP/1.1 302 Found
+|     Location: https://:8010
+|     Connection: close
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|     Content-Security-Policy: frame-ancestors 'self'
+|   GetRequest: 
+|     HTTP/1.1 302 Found
+|     Location: https://:8010/
+|     Connection: close
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|_    Content-Security-Policy: frame-ancestors 'self'
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Did not follow redirect to https://tavit.co:8010/
+8010/tcp open  ssl/xmpp?   syn-ack
+| fingerprint-strings: 
+|   GenericLines, GetRequest: 
+|     HTTP/1.1 200 OK
+|     Content-Length: 4599
+|     Connection: close
+|     Cache-Control: no-cache
+|     Content-Type: text/html; charset=utf-8
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|     Content-Security-Policy: frame-ancestors 'self'
+|     <!DOCTYPE html>
+|     <html lang="en">
+|     <head>
+|     <meta charset="UTF-8">
+|     <meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+|     <meta name="viewport" content="width=device-width, initial-scale=1">
+|     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+|     <style type="text/css">
+|     body {
+|     height: 100%;
+|     font-family: Roboto, Helvetica, Arial, sans-serif;
+|     color: #6a6a6a;
+|     margin: 0;
+|     display: flex;
+|     align-items: center;
+|_    justify-content: cent
+| ssl-cert: Subject: commonName=tavit.co
+| Subject Alternative Name: DNS:tavit.co
+| Issuer: commonName=FGT80FTK21006267/organizationName=Fortinet/stateOrProvinceName=California/countryName=US/localityName=Sunnyvale/emailAddress=support@fortinet.com/organizationalUnitName=Certificate Authority
+| Public Key type: ec
+| Public Key bits: 256
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-06-02T09:38:53
+| Not valid after:  2023-09-05T09:38:53
+| MD5:   fe74 002a afaa 8b82 15cb 7f5b 4b35 10d5
+| SHA-1: 6c75 c337 6008 dd7a 94b4 46ea 8a81 c82b dfa3 76f4
+| -----BEGIN CERTIFICATE-----
+| MIICrTCCAZWgAwIBAgIKRBsGfKeYDVeBTzANBgkqhkiG9w0BAQsFADCBqTELMAkG
+| A1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExEjAQBgNVBAcMCVN1bm55dmFs
+| ZTERMA8GA1UECgwIRm9ydGluZXQxHjAcBgNVBAsMFUNlcnRpZmljYXRlIEF1dGhv
+| cml0eTEZMBcGA1UEAwwQRkdUODBGVEsyMTAwNjI2NzEjMCEGCSqGSIb3DQEJARYU
+| c3VwcG9ydEBmb3J0aW5ldC5jb20wHhcNMjEwNjAyMDkzODUzWhcNMjMwOTA1MDkz
+| ODUzWjATMREwDwYDVQQDDAh0YXZpdC5jbzBZMBMGByqGSM49AgEGCCqGSM49AwEH
+| A0IABPS10r83WNRkAlxQcnTRf8/JbfvkVN/LKByuYiB3i5DkmUdIzTxeeYaa9uBP
+| q6m30Ate2dajyQgmYXybvmo0Fo2jNzA1MAkGA1UdEwQCMAAwEwYDVR0lBAwwCgYI
+| KwYBBQUHAwEwEwYDVR0RBAwwCoIIdGF2aXQuY28wDQYJKoZIhvcNAQELBQADggEB
+| AJbGVyKFatZ1Vorw9HTccdSxfDw6OpqcKbzXZu5Oej1TluACK65VhDWYh4ceegoy
+| a3jKEI48tpJ1oNcLyg9NT4u3c4BrCs5xKCdQkVk28oP9KFQ7sgqMQdmEc7fkBfTw
+| e6jET3aSfLLntJA03kkCXuH+GSPA7jr8h9CpiVx6xKU/Rm6PtALZzrxThW9tKHLG
+| F5Ee0g1jNnCW4S7lqWF/4adc+0GY8QWlixmuWSV6hrUyqKyUWQcU0+lze4zyvg/o
+| nwgNUt5BetD3LfuHHmAKTtKWFf0y1h0JKHTxAEM0hXLzy5mowSSJXeDULDa7F12w
+| 3uVTQI/OGOZqER69TDCftlQ=
+|_-----END CERTIFICATE-----
+|_ssl-date: 2021-12-19T15:08:42+00:00; +6s from scanner time.
+3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port25-TCP:V=7.91%I=7%D=12/19%Time=61BF4A11%P=x86_64-pc-linux-gnu%r(Hel
+SF:lo,52,"554\x205\.7\.1\x20This\x20message\x20has\x20been\x20blocked\x20b
+SF:ecause\x20the\x20HELO/EHLO\x20domain\x20is\x20invalid\.\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8008-TCP:V=7.91%I=7%D=12/19%Time=61BF4A0A%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,D3,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8010/\
+SF:r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Prot
+SF:ection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nosniff\r\nCo
+SF:ntent-Security-Policy:\x20frame-ancestors\x20'self'\r\n\r\n")%r(FourOhF
+SF:ourRequest,F6,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8010/
+SF:nice%20ports%2C/Tri%6Eity\.txt%2ebak\r\nConnection:\x20close\r\nX-Frame
+SF:-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-C
+SF:ontent-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-an
+SF:cestors\x20'self'\r\n\r\n")%r(GenericLines,D2,"HTTP/1\.1\x20302\x20Foun
+SF:d\r\nLocation:\x20https://:8010\r\nConnection:\x20close\r\nX-Frame-Opti
+SF:ons:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Conten
+SF:t-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancesto
+SF:rs\x20'self'\r\n\r\n")%r(HTTPOptions,D2,"HTTP/1\.1\x20302\x20Found\r\nL
+SF:ocation:\x20https://:8010\r\nConnection:\x20close\r\nX-Frame-Options:\x
+SF:20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type
+SF:-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancestors\x20
+SF:'self'\r\n\r\n")%r(RTSPRequest,D2,"HTTP/1\.1\x20302\x20Found\r\nLocatio
+SF:n:\x20https://:8010\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAME
+SF:ORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Optio
+SF:ns:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancestors\x20'self'
+SF:\r\n\r\n")%r(SIPOptions,D2,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20h
+SF:ttps://:8010\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\
+SF:r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20
+SF:nosniff\r\nContent-Security-Policy:\x20frame-ancestors\x20'self'\r\n\r\
+SF:n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8010-TCP:V=7.91%T=SSL%I=7%D=12/19%Time=61BF4A15%P=x86_64-pc-linux-g
+SF:nu%r(GenericLines,1304,"HTTP/1\.1\x20200\x20OK\r\nContent-Length:\x2045
+SF:99\r\nConnection:\x20close\r\nCache-Control:\x20no-cache\r\nContent-Typ
+SF:e:\x20text/html;\x20charset=utf-8\r\nX-Frame-Options:\x20SAMEORIGIN\r\n
+SF:X-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nos
+SF:niff\r\nContent-Security-Policy:\x20frame-ancestors\x20'self'\r\n\r\n<!
+SF:DOCTYPE\x20html>\n<html\x20lang=\"en\">\n\x20\x20\x20\x20<head>\n\x20\x
+SF:20\x20\x20\x20\x20\x20\x20<meta\x20charset=\"UTF-8\">\n\x20\x20\x20\x20
+SF:\x20\x20\x20\x20<meta\x20http-equiv=\"X-UA-Compatible\"\x20content=\"IE
+SF:=8;\x20IE=EDGE\">\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20name=\"view
+SF:port\"\x20content=\"width=device-width,\x20initial-scale=1\">\n\x20\x20
+SF:\x20\x20\x20\x20\x20\x20<link\x20href=\"https://fonts\.googleapis\.com/
+SF:css\?family=Roboto&display=swap\"\x20rel=\"stylesheet\">\n\x20\x20\x20\
+SF:x20\x20\x20\x20\x20<style\x20type=\"text/css\">\n\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20body\x20{\n\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20height:\x20100%;\n\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20Roboto,\x20Hel
+SF:vetica,\x20Arial,\x20sans-serif;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20color:\x20#6a6a6a;\n\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200;\n\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\n\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20align-items
+SF::\x20center;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20justify-content:\x20cent")%r(GetRequest,1304,"HTTP/1\.1\x20200\x
+SF:20OK\r\nContent-Length:\x204599\r\nConnection:\x20close\r\nCache-Contro
+SF:l:\x20no-cache\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nX-Fra
+SF:me-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX
+SF:-Content-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-
+SF:ancestors\x20'self'\r\n\r\n<!DOCTYPE\x20html>\n<html\x20lang=\"en\">\n\
+SF:x20\x20\x20\x20<head>\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20charset
+SF:=\"UTF-8\">\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20http-equiv=\"X-UA
+SF:-Compatible\"\x20content=\"IE=8;\x20IE=EDGE\">\n\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20<meta\x20name=\"viewport\"\x20content=\"width=device-width,\x2
+SF:0initial-scale=1\">\n\x20\x20\x20\x20\x20\x20\x20\x20<link\x20href=\"ht
+SF:tps://fonts\.googleapis\.com/css\?family=Roboto&display=swap\"\x20rel=\
+SF:"stylesheet\">\n\x20\x20\x20\x20\x20\x20\x20\x20<style\x20type=\"text/c
+SF:ss\">\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20body\x20{\n\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20height:\x201
+SF:00%;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20f
+SF:ont-family:\x20Roboto,\x20Helvetica,\x20Arial,\x20sans-serif;\n\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#6a6a
+SF:6a;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20ma
+SF:rgin:\x200;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20display:\x20flex;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20align-items:\x20center;\n\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20justify-content:\x20cent");
+
+Host script results:
+|_clock-skew: 5s
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 10718/tcp): CLEAN (Timeout)
+|   Check 2 (port 19581/tcp): CLEAN (Timeout)
+|   Check 3 (port 21223/udp): CLEAN (Timeout)
+|   Check 4 (port 20517/udp): CLEAN (Timeout)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+|_smb2-security-mode: Couldn't establish a SMBv2 connection.
+|_smb2-time: Protocol negotiation failed (SMB2)
+
 Read data files from: /usr/bin/../share/nmap
-WARNING: No targets were specified, so 0 hosts scanned.
-# Nmap done at Sat Dec 18 19:50:28 2021 -- 0 IP addresses (0 hosts up) scanned in 0.29 seconds
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Dec 19 17:09:33 2021 -- 1 IP address (1 host up) scanned in 300.61 seconds
