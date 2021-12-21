@@ -10,3 +10,6 @@
 [submodule "log4j-shell-poc"]
 	path = log4j-shell-poc
 	url = ./log4j-shell-poc
+[submodule "qsreplace"]
+	path = qsreplace
+	url = ./qsreplace
